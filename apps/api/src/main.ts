@@ -11,7 +11,7 @@ async function bootstrap() {
   });
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api/v1');
-  app.use(cookieParser);
+  app.use(cookieParser());
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -25,7 +25,7 @@ async function bootstrap() {
     credentials: true,
   });
   app.use(rejectCrossSiteWrite);
-  const port = Number(process.env.PORT ?? 6000);
+  const port = Number(process.env.PORT);
   await app.listen(port).then(() => {
     console.log(`Api listening on http://127.0.0.1:${port}/api/v1`);
   })

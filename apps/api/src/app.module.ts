@@ -14,6 +14,7 @@ import { ChannelModule } from './channel/channel.module.js';
 import { TagsModule } from './tags/tags.module.js';
 import { ChatModule } from './chat/chat.module.js';
 import { AdminModule } from './admin/admin.module.js';
+import { TestModule } from './test/test.module.js';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { AdminModule } from './admin/admin.module.js';
     ChannelModule,
     TagsModule,
     ChatModule,
-    AdminModule
+    AdminModule,
+    TestModule
   ],
 })
 export class AppModule { }
